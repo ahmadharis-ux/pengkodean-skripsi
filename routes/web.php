@@ -1,5 +1,8 @@
 <?php
 
+use App\Models\Guru;
+use App\Models\Kelas;
+use App\Models\Mapel;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +17,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index',[
+        "kelas" => Kelas::all(),
+        "guru" => Guru::all(),
+        "mapel" => Mapel::all(),
+    ]);
 });
