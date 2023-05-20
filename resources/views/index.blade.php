@@ -86,10 +86,65 @@
             <div class="col">
                 <div class="card">
                     <div class="card-header">
-                        <label for="">Penugasan</label>
+                        <label for="">Jam Kelas</label>
                     </div>
                     <div class="card-body">
-                        
+                        <form action="">
+                            <div class="row mx-2 my-2">
+                                <div class="form-check col">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        Senin
+                                    </label>
+                                </div>
+                                <div class="form-check col">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                        Selasa
+                                    </label>
+                                </div>
+                                <div class="form-check col">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                        Rabu
+                                    </label>
+                                </div>
+                                <div class="form-check col">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                        Kamis
+                                    </label>
+                                </div>
+                                <div class="form-check col">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                        Jumat
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="row mb-2 mx-2 my-2">
+                                    <div class="col">
+                                        <label for="">Jumlah Jam</label>
+                                        <input type="text" class="form-control mt-2">
+                                    </div>
+                                    <div class="col">
+                                        <label for="">Waktu persatu Jam pelajaran</label>
+                                        <div class="row mx-2">
+                                            <input type="number" class="form-control col mt-2" name="" id="">
+                                            <label for="" class="col mt-2">Menit</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card mt-2">
+                                <div class="mx-2 my-2">
+                                    <label for="">Jam Mulai</label>
+                                    <input type="time" class="form-control mt-2">
+                                </div>
+                            </div>
+                            <button class="btn btn-primary btn-md mx-2 my-2">Submit</button>
+                        </form>
                     </div>
                 </div>
             </div>
