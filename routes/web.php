@@ -17,9 +17,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index',[
+    return view('index', [
         "kelas" => Kelas::all(),
         "guru" => Guru::all(),
         "mapel" => Mapel::all(),
     ]);
+});
+
+
+Route::get('/penugasan_layout', function () {
+    return view('percobaan.penugasan');
 });
