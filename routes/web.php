@@ -3,6 +3,7 @@
 use App\Models\Guru;
 use App\Models\Kelas;
 use App\Models\Mapel;
+use App\Models\Tingkat;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +20,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index', [
         "kelas" => Kelas::all(),
+        "tingkat" => Tingkat::all(),
+        "listKelasX" => Kelas::where('tingkat_id', '1'),
+        "listKelasXI" => Kelas::where('tingkat_id', '2'),
+        "listKelasXII" => Kelas::where('tingkat_id', '3'),
         "guru" => Guru::all(),
         "mapel" => Mapel::all(),
     ]);
