@@ -74,7 +74,7 @@
                 <div class="row mb-3">
                     <label class="col-sm-3 col-form-label">Jumlah jam</label>
                     <div class="col-sm-4">
-                        <input type="number" class="form-control" name="jumlah_jam" disabled>
+                        <input type="number" class="form-control" name="jumlah_jam_kelas_x" disabled>
                     </div>
                 </div>
 
@@ -82,23 +82,118 @@
                 <div class="d-flex flex-column border p-3  rounded">
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" disabled>
-                        <label class="form-check-label" for="flexCheckDefault">
+                        <input class="form-check-input" type="checkbox" value="" id="xrpl1" disabled>
+                        <label class="form-check-label" for="xrpl1">
                             X RPL 1
                         </label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" disabled>
-                        <label class="form-check-label" for="flexCheckChecked">
+                        <input class="form-check-input" type="checkbox" value="" id="xrpl2" disabled>
+                        <label class="form-check-label" for="xrpl2">
                             X RPL 2
                         </label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" disabled>
-                        <label class="form-check-label" for="flexCheckChecked">
+                        <input class="form-check-input" type="checkbox" value="" id="xrpl69" disabled>
+                        <label class="form-check-label" for="xrpl69">
                             X RPL 69
+                        </label>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        {{-- kelas XI --}}
+        <div class="border p-3 mb-3">
+            {{-- toggle kelas XI --}}
+            <div>
+                <input type="checkbox" class="btn-check toggle-kelas" id="cbKelasXI" data-kelas="xi">
+                <label class="btn btn-outline-primary " for="cbKelasXI">Kelas XI</label>
+            </div>
+
+            {{-- inputan kelas xi --}}
+            <div id="inputKelas-xi">
+
+                {{-- jumlah jam --}}
+                <div class="row mb-3">
+                    <label class="col-sm-3 col-form-label">Jumlah jam</label>
+                    <div class="col-sm-4">
+                        <input type="number" class="form-control" name="jumlah_jam_kelas_xi" disabled>
+                    </div>
+                </div>
+
+                {{-- pilihan kelas --}}
+                <div class="d-flex flex-column border p-3  rounded">
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="xirpl1" disabled>
+                        <label class="form-check-label" for="xirpl1">
+                            XI RPL 1
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="xirpl2" disabled>
+                        <label class="form-check-label" for="xirpl2">
+                            XI RPL 2
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="xirpl69" disabled>
+                        <label class="form-check-label" for="xirpl69">
+                            XI RPL 69
+                        </label>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        {{-- kelas XII --}}
+        <div class="border p-3 mb-3">
+            {{-- toggle kelas XII --}}
+            <div>
+                <input type="checkbox" class="btn-check toggle-kelas" id="cbKelasXII" data-kelas="xii">
+                <label class="btn btn-outline-primary " for="cbKelasXII">Kelas XII</label>
+            </div>
+
+            {{-- inputan kelas xii --}}
+            <div id="inputKelas-xii">
+
+                {{-- jumlah jam --}}
+                <div class="row mb-3">
+                    <label class="col-sm-3 col-form-label">Jumlah jam</label>
+                    <div class="col-sm-4">
+                        <input type="number" class="form-control" name="jumlah_jam_kelas_xii" disabled>
+                    </div>
+                </div>
+
+                {{-- pilihan kelas --}}
+                <div class="d-flex flex-column border p-3  rounded">
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="xiirpl1" disabled>
+                        <label class="form-check-label" for="xiirpl1">
+                            XII RPL 1
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="xiirpl2" disabled>
+                        <label class="form-check-label" for="xiirpl2">
+                            XII RPL 2
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="xiirpl69" disabled>
+                        <label class="form-check-label" for="xiirpl69">
+                            XII RPL 69
                         </label>
                     </div>
 
@@ -152,8 +247,8 @@
         }
 
         cbKelasX.change(handleToggleKelas)
-        // cbKelasXI.change(handleToggleKelas)
-        // cbKelasXII.change(handleToggleKelas)
+        cbKelasXI.change(handleToggleKelas)
+        cbKelasXII.change(handleToggleKelas)
 
 
 
