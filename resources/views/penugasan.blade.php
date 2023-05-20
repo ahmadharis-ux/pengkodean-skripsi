@@ -1,10 +1,10 @@
-<form action="#" method="post">
+<form action="/test_submit" method="post">
     @csrf
 
     {{-- inputan atas --}}
     <div>
         {{-- input combo box --}}
-        <div class="row mb-3">
+        {{-- <div class="row mb-3">
             <label class="col-sm-4 col-form-label">Nama guru (combo box)</label>
             <div class="col-sm-8">
                 <input type="text" class="form-control" name="nama_guru" list="daftarGuru">
@@ -14,14 +14,14 @@
                     @endforeach
                 </datalist>
             </div>
-        </div>
+        </div> --}}
 
 
         {{-- select guru --}}
         <div class="row mb-3">
             <label class="col-sm-4 col-form-label">Guru</label>
             <div class="col-sm-8">
-                <select name="nama_guru" class="form-select">
+                <select name="id_guru" class="form-select">
                     @foreach ($guru as $item)
                         <option value="{{ $item->id }}">{{ $item->nama }}</option>
                     @endforeach
@@ -30,10 +30,16 @@
             </div>
         </div>
 
+        {{-- select mapel --}}
         <div class="row mb-3">
             <label class="col-sm-4 col-form-label">Mata pelajaran</label>
             <div class="col-sm-8">
-                <input type="text" class="form-control" name="mata_pelajaran">
+                <select name="id_mapel" class="form-select">
+                    @foreach ($mapel as $item)
+                        <option value="{{ $item->id }}">{{ $item->nama }}</option>
+                    @endforeach
+                </select>
+
             </div>
         </div>
     </div>
@@ -82,8 +88,9 @@
                             @endphp
 
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="{{ $idKelas }}"
-                                    disabled>
+                                <input class="form-check-input" type="checkbox"
+                                    name="list_kelas_{{ $t->tingkat }}_terpilih[]" value="{{ $kelas->id }}"
+                                    id="{{ $idKelas }}" disabled>
                                 <label class="form-check-label" for="{{ $idKelas }}">
                                     {{ $namaKelas }}
                                 </label>
@@ -116,14 +123,6 @@
         const cbKelasXI = $("#cbKelasXI")
         const cbKelasXII = $("#cbKelasXII")
 
-        let onKelasX
-        let onKelasXI
-        let onKelasXII
-
-        const inputKelasX = $("#inputKelasX")
-        const inputKelasXI = $("#inputKelasXI")
-        const inputKelasXII = $("#inputKelasXII")
-
         function handleToggleKelas(evt) {
             const isChecked = this.checked
             const kelasTerpilih = $(this).data('kelas')
@@ -146,9 +145,5 @@
         cbKelasX.change(handleToggleKelas)
         cbKelasXI.change(handleToggleKelas)
         cbKelasXII.change(handleToggleKelas)
-
-
-
-
     })
 </script>

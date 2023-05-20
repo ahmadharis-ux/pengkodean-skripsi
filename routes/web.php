@@ -5,6 +5,7 @@ use App\Models\Kelas;
 use App\Models\Mapel;
 use App\Models\Tingkat;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request as HttpRequest;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,4 +33,9 @@ Route::get('/', function () {
 
 Route::get('/penugasan_layout', function () {
     return view('percobaan.penugasan');
+});
+
+Route::post('/test_submit', function (HttpRequest $request) {
+    // dd($request);
+    return $request;
 });
