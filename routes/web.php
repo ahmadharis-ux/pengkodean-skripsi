@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\JamController;
 use App\Models\Guru;
 use App\Models\Kelas;
 use App\Models\Mapel;
@@ -23,3 +24,5 @@ Route::get('/', function () {
         "mapel" => Mapel::all(),
     ]);
 });
+
+Route::resource('jam',JamController::class);
