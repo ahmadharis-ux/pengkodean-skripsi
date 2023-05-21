@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('tingkat_id')->unsigned();
             $table->string('nama');
             $table->integer('nomor');
+            $table->string('lokasi');
             $table->timestamps();
 
             $table->foreign('tingkat_id')->references('id')->on('tingkats');

@@ -22,7 +22,7 @@
                         <label for="">Kelas</label>
                     </div>
                     <div class="card-body">
-                        <table class="table">
+                        {{-- <table class="table">
                             <thead>
                                 <tr>
                                     <td>Tingkat</td>
@@ -39,7 +39,7 @@
                                     </tr>
                                 @endforeach
                             </tbody>
-                        </table>
+                        </table> --}}
                     </div>
                 </div>
             </div>
@@ -49,7 +49,7 @@
                         <label for="">Guru</label>
                     </div>
                     <div class="card-body">
-                        <table class="table">
+                        {{-- <table class="table">
                             <thead>
                                 <tr>
                                     <td>Nama</td>
@@ -62,7 +62,7 @@
                                     </tr>
                                 @endforeach
                             </tbody>
-                        </table>
+                        </table> --}}
                     </div>
                 </div>
             </div>
@@ -72,7 +72,7 @@
                         <label for="">Mapel</label>
                     </div>
                     <div class="card-body">
-                        <table class="table">
+                        {{-- <table class="table">
                             <thead>
                                 <tr>
                                     <td>Nama</td>
@@ -85,19 +85,16 @@
                                     </tr>
                                 @endforeach
                             </tbody>
-                        </table>
+                        </table> --}}
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
             <div class="col">
                 <div class="card">
                     <div class="card-header">
-                        <label for="">Jam Kelas</label>
+                        <label for="">Jam</label>
                     </div>
                     <div class="card-body">
-<<<<<<< HEAD
                         <form action="/jam" method="post">
                             @csrf
                             <div class="row mx-2 my-2">
@@ -155,10 +152,6 @@
                             </div>
                             <button class="btn btn-primary btn-md mx-2 my-2" type="submit">Submit</button>
                         </form>
-=======
-                        {{-- @include('percobaan.penugasan') --}}
-                        @include('penugasan')
->>>>>>> main
                     </div>
                 </div>
                 <div class="card mt-2">
@@ -222,6 +215,21 @@
                             </div>
                             <button class="btn btn-primary btn-md mx-2 my-2" type="submit">Submit</button>
                         </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-header">
+                        <label for="">Penugasan Guru</label>
+                    </div>
+                    <div class="card-body">
+
+                        {{-- @include('percobaan.penugasan') --}}
+                        @include('penugasan')
                     </div>
                 </div>
             </div>
