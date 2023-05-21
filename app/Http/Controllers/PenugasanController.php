@@ -40,15 +40,15 @@ class PenugasanController extends Controller
         $mapel = $request->input('id_mapel');
         $jamPelajaran = $request->input('jumlah_jam_kelas');
 
-        foreach ($pilihkelas as $kelas) {
-            $data = new PenugasanGuru(); // Ganti YourModel dengan model yang sesuai
-            $data->id_kelas = $kelas;
-            $data->id_guru = $id_guru;
-            $data->id_mapel = $mapel;
-            $data->jam_pelajaran = $jamPelajaran;
-            // dd($data);
-            // $data->save();
-            
+        foreach ($pilihkelas as $tingkat => $kelas) {
+            foreach ($kelas as $kelasId) {
+                $data = new PenugasanGuru(); // Ganti YourModel dengan model yang sesuai
+                $data->id_kelas = $kelasId;
+                $data->id_guru = $id_guru;
+                $data->id_mapel = $mapel;
+                $data->jam_pelajaran = $jamPelajaran[$tingkat];
+                $data->save();
+            }
         }
         // return redirect()->back();
         return $request;
