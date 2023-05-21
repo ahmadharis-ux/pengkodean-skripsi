@@ -42,60 +42,42 @@ class PenugasanController extends Controller
         $pilihkelasXI = $request->input('list_kelasXI', []);
         $pilihkelasXII = $request->input('list_kelasXII', []);
 
-        $listKelas = [
-            $pilihkelasX,
-            $pilihkelasXI,
-            $pilihkelasXII
-        ];
 
         $jamPelajaranX = $request->input('jumlah_jam_kelasX');
         $jamPelajaranXI = $request->input('jumlah_jam_kelasXI');
         $jamPelajaranXII = $request->input('jumlah_jam_kelasXII');
 
-        $listJamPelajaran = [
-            $jamPelajaranX,
-            $jamPelajaranXI,
-            $jamPelajaranXII,
-        ];
-
-        $wadahSementara = [];
-
-        for ($i = 0; $i < sizeof($listKelas); $i++) {
-            // $listKelas[$i]->jam_pelajaran = $listJamPelajaran[$i];
-            // $wadahSementara[] = $listKelas[$i];
-
-            foreach($listKelas[$i] as $kelas){
-                $data = new PenugasanGuru();
-                $data->id_kelas = $kelas;
-                $data->id_guru = $id_guru;
-                $data->id_mapel = $mapel;
-            }
-
-
-
-        }
-
-        return $wadahSementara;
-
-        foreach ($pilihkelas as $kelas) {
-            $data = new PenugasanGuru(); // Ganti YourModel dengan model yang sesuai
+        foreach ($pilihkelasX as $kelas) {
+            $data = new PenugasanGuru();
             $data->id_kelas = $kelas;
             $data->id_guru = $id_guru;
             $data->id_mapel = $mapel;
-            $data->jam_pelajaran = $jamPelajaran;
+            $data->jam_pelajaran = $jamPelajaranX;
             // dd($data);
-            // $data->save();
+            $data->save();
+        }
 
-            foreach ($listIdKelas as $idKelas) {
-                $penugasan = [
-                    "id_guru" => $idGuru,
-                    "id_mapel" => $idMapel,
-                    // "jam_pelajaran" =>
-                ];
-                PenugasanGuru::insert();
-            }
-            // return redirect()->back();
-            return $request;
+        foreach ($pilihkelasXI as $kelas) {
+            $data = new PenugasanGuru();
+            $data->id_kelas = $kelas;
+            $data->id_guru = $id_guru;
+            $data->id_mapel = $mapel;
+            $data->jam_pelajaran = $jamPelajaranXI;
+            // dd($data);
+            $data->save();
+        }
+
+        foreach ($pilihkelasXII as $kelas) {
+            $data = new PenugasanGuru();
+            $data->id_kelas = $kelas;
+            $data->id_guru = $id_guru;
+            $data->id_mapel = $mapel;
+            $data->jam_pelajaran = $jamPelajaranXII;
+            // dd($data);
+            $data->save();
+        }
+
+        return 'anjay';
     }
 
     /**

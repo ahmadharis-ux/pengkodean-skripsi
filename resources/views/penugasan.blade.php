@@ -74,8 +74,8 @@
                             <div class="row mb-3">
                                 <label class="col-sm-3 col-form-label">Jumlah jam</label>
                                 <div class="col-sm-4">
-                                    <input type="number" class="form-control" value="{{ $t->id + 5 }}"
-                                        name="jumlah_jam_kelas{{ $t->tingkat }}[]">
+                                    <input type="number" class="form-control"
+                                        name="jumlah_jam_kelas{{ $t->tingkat }}" disabled>
                                 </div>
                             </div>
 
@@ -92,7 +92,7 @@
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox"
                                             name="list_kelas{{ $t->tingkat }}[]" value="{{ $kelas->id }}"
-                                            id="{{ $idKelas }}" {{ $kelas->id % 2 == 0 ? 'checked' : '' }}>
+                                            id="{{ $idKelas }}" disabled>
                                         <label class="form-check-label" for="{{ $idKelas }}">
                                             {{ $namaKelas }}
                                         </label>
@@ -115,14 +115,6 @@
         const cbKelasX = $("#cbKelasX")
         const cbKelasXI = $("#cbKelasXI")
         const cbKelasXII = $("#cbKelasXII")
-
-        const inputsa = $(container).find('input')
-
-
-
-
-
-
 
         function handleToggleKelas(evt) {
             const isChecked = this.checked
