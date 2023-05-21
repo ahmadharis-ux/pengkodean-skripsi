@@ -35,10 +35,47 @@ class PenugasanController extends Controller
      */
     public function store(Request $request)
     {
-        $pilihkelas = $request->input('list_kelas', []); // Mengambil data checkbox dari form
         $id_guru = $request->input('id_guru');
         $mapel = $request->input('id_mapel');
-        $jamPelajaran = $request->input('jumlah_jam_kelas');
+
+        $pilihkelasX = $request->input('list_kelasX', []);
+        $pilihkelasXI = $request->input('list_kelasXI', []);
+        $pilihkelasXII = $request->input('list_kelasXII', []);
+
+        $listKelas = [
+            $pilihkelasX,
+            $pilihkelasXI,
+            $pilihkelasXII
+        ];
+
+        $jamPelajaranX = $request->input('jumlah_jam_kelasX');
+        $jamPelajaranXI = $request->input('jumlah_jam_kelasXI');
+        $jamPelajaranXII = $request->input('jumlah_jam_kelasXII');
+
+        $listJamPelajaran = [
+            $jamPelajaranX,
+            $jamPelajaranXI,
+            $jamPelajaranXII,
+        ];
+
+        $wadahSementara = [];
+
+        for ($i = 0; $i < sizeof($listKelas); $i++) {
+            // $listKelas[$i]->jam_pelajaran = $listJamPelajaran[$i];
+            // $wadahSementara[] = $listKelas[$i];
+
+            foreach($listKelas[$i] as $kelas){
+                $data = new PenugasanGuru();
+                $data->id_kelas = $kelas;
+                $data->id_guru = $id_guru;
+                $data->id_mapel = $mapel;
+            }
+
+
+
+        }
+
+        return $wadahSementara;
 
         foreach ($pilihkelas as $kelas) {
             $data = new PenugasanGuru(); // Ganti YourModel dengan model yang sesuai
@@ -48,10 +85,17 @@ class PenugasanController extends Controller
             $data->jam_pelajaran = $jamPelajaran;
             // dd($data);
             // $data->save();
-            
-        }
-        // return redirect()->back();
-        return $request;
+
+            foreach ($listIdKelas as $idKelas) {
+                $penugasan = [
+                    "id_guru" => $idGuru,
+                    "id_mapel" => $idMapel,
+                    // "jam_pelajaran" =>
+                ];
+                PenugasanGuru::insert();
+            }
+            // return redirect()->back();
+            return $request;
     }
 
     /**
