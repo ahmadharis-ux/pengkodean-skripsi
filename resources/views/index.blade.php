@@ -89,34 +89,35 @@
                         <label for="">Jam Kelas</label>
                     </div>
                     <div class="card-body">
-                        <form action="">
+                        <form action="/jam" method="post">
+                            @csrf
                             <div class="row mx-2 my-2">
                                 <div class="form-check col">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <input class="form-check-input" name="hari[]" type="checkbox" value="senin" id="flexCheckDefault">
                                     <label class="form-check-label" for="flexCheckDefault">
                                         Senin
                                     </label>
                                 </div>
                                 <div class="form-check col">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                    <input class="form-check-input" name="hari[]" type="checkbox" value="selasa" id="flexCheckChecked">
                                     <label class="form-check-label" for="flexCheckChecked">
                                         Selasa
                                     </label>
                                 </div>
                                 <div class="form-check col">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                    <input class="form-check-input" name="hari[]" type="checkbox" value="rabu" id="flexCheckChecked">
                                     <label class="form-check-label" for="flexCheckChecked">
                                         Rabu
                                     </label>
                                 </div>
                                 <div class="form-check col">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                    <input class="form-check-input" name="hari[]" type="checkbox" value="kamis" id="flexCheckChecked">
                                     <label class="form-check-label" for="flexCheckChecked">
                                         Kamis
                                     </label>
                                 </div>
                                 <div class="form-check col">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                    <input class="form-check-input" name="hari[]" type="checkbox" value="jumat" id="flexCheckChecked">
                                     <label class="form-check-label" for="flexCheckChecked">
                                         Jumat
                                     </label>
@@ -126,12 +127,12 @@
                                 <div class="row mb-2 mx-2 my-2">
                                     <div class="col">
                                         <label for="">Jumlah Jam</label>
-                                        <input type="text" class="form-control mt-2">
+                                        <input type="number" name="jumlah_sesi" class="form-control mt-2">
                                     </div>
                                     <div class="col">
                                         <label for="">Waktu persatu Jam pelajaran</label>
                                         <div class="row mx-2">
-                                            <input type="number" class="form-control col mt-2" name="" id="">
+                                            <input type="number" name="waktu_sesi" class="form-control col mt-2" id="">
                                             <label for="" class="col mt-2">Menit</label>
                                         </div>
                                     </div>
@@ -140,10 +141,10 @@
                             <div class="card mt-2">
                                 <div class="mx-2 my-2">
                                     <label for="">Jam Mulai</label>
-                                    <input type="time" class="form-control mt-2">
+                                    <input type="time" name="waktu_mulai" class="form-control mt-2">
                                 </div>
                             </div>
-                            <button class="btn btn-primary btn-md mx-2 my-2">Submit</button>
+                            <button class="btn btn-primary btn-md mx-2 my-2" type="submit">Submit</button>
                         </form>
                     </div>
                 </div>
@@ -155,31 +156,31 @@
                         <form action="">
                             <div class="row mx-2 my-2">
                                 <div class="form-check col">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <input class="form-check-input" name="hari[]" type="checkbox" value="senin" id="flexCheckDefault">
                                     <label class="form-check-label" for="flexCheckDefault">
                                         Senin
                                     </label>
                                 </div>
                                 <div class="form-check col">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                    <input class="form-check-input" name="hari[]" type="checkbox" value="selasa" id="flexCheckChecked">
                                     <label class="form-check-label" for="flexCheckChecked">
                                         Selasa
                                     </label>
                                 </div>
                                 <div class="form-check col">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                    <input class="form-check-input" name="hari[]" type="checkbox" value="rabu" id="flexCheckChecked">
                                     <label class="form-check-label" for="flexCheckChecked">
                                         Rabu
                                     </label>
                                 </div>
                                 <div class="form-check col">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                    <input class="form-check-input" name="hari[]" type="checkbox" value="kamis" id="flexCheckChecked">
                                     <label class="form-check-label" for="flexCheckChecked">
                                         Kamis
                                     </label>
                                 </div>
                                 <div class="form-check col">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                    <input class="form-check-input" name="hari[]" type="checkbox" value="jumat" id="flexCheckChecked">
                                     <label class="form-check-label" for="flexCheckChecked">
                                         Jumat
                                     </label>
@@ -189,12 +190,12 @@
                                 <div class="row mb-2 mx-2 my-2">
                                     <div class="col">
                                         <label for="">Jumlah Jam</label>
-                                        <input type="text" class="form-control mt-2">
+                                        <input type="text" name="jumlah_sesi" class="form-control mt-2">
                                     </div>
                                     <div class="col">
                                         <label for="">Waktu persatu Jam pelajaran</label>
                                         <div class="row mx-2">
-                                            <input type="number" class="form-control col mt-2" name="" id="">
+                                            <input type="number" name="waktu_sesi" class="form-control col mt-2" name="" id="">
                                             <label for="" class="col mt-2">Menit</label>
                                         </div>
                                     </div>
@@ -203,10 +204,10 @@
                             <div class="card mt-2">
                                 <div class="mx-2 my-2">
                                     <label for="">Jam Mulai</label>
-                                    <input type="time" class="form-control mt-2">
+                                    <input type="time" name="waktu_mulai" class="form-control mt-2">
                                 </div>
                             </div>
-                            <button class="btn btn-primary btn-md mx-2 my-2">Submit</button>
+                            <button class="btn btn-primary btn-md mx-2 my-2" type="submit">Submit</button>
                         </form>
                     </div>
                 </div>
@@ -214,7 +215,44 @@
         </div>
         <hr>
         <div class="row">
-            <label for="">Hari</label>
+            <div class="col">
+                <div class="card">
+                    <label for="">Senin</label>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Sesi</th>
+                                <th>Waktu Mulai</th>
+                                <th>Waktu Selesai</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $jumlahSesi = 12;
+                            $waktuMulai = '07:00';
+                            $waktuPerSesi = 40;
+                            $menitPerSesi = 0;
+                    
+                            for ($sesi = 1; $sesi <= $jumlahSesi; $sesi++) {
+                                $waktuSelesai = date('H:i', strtotime($waktuMulai . " +{$waktuPerSesi} minutes"));
+                                echo "<tr>";
+                                echo "<td>Sesi $sesi</td>";
+                                echo "<td>$waktuMulai</td>";
+                                echo "<td>$waktuSelesai</td>";
+                                echo "</tr>";
+                    
+                                $waktuMulai = $waktuSelesai;
+                                $menitPerSesi += $waktuPerSesi;
+                                $jam = floor($menitPerSesi / 60);
+                                $menit = $menitPerSesi % 60;
+                                $waktuMulai = date('H:i', strtotime($waktuMulai . " +{$jam} hours +{$menit} minutes"));
+                            }
+                            ?>
+                        </tbody>
+                    </table>
+                    
+                </div>
+            </div>
         </div>
     </div>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>

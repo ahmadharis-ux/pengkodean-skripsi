@@ -35,7 +35,21 @@ class JamController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $selectedDays = $request->input('hari', []); // Mengambil data checkbox dari form
+        $jumlahJam = $request->input('jumlah_sesi');
+        $menitPelajaran = $request->input('waktu_sesi');
+        $jamMulai = $request->input('waktu_mulai');
+
+        foreach ($selectedDays as $day) {
+            $data = new Jam(); // Ganti YourModel dengan model yang sesuai
+            $data->hari = $day;
+            $data->jumlah_sesi = $jumlahJam;
+            $data->waktu_sesi = $menitPelajaran;
+            $data->waktu_mulai = $jamMulai;
+            // dd($data);
+            $data->save();
+        }
+        return redirect()->back();
     }
 
     /**

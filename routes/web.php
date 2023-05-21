@@ -25,4 +25,5 @@ Route::get('/', function () {
     ]);
 });
 
-Route::resource('jam',JamController::class);
+Route::resource('/jam', JamController::class);
+// Route::post('/jam/store',[JamController::class,'store']);
