@@ -22,7 +22,7 @@
                         <label for="">Kelas</label>
                     </div>
                     <div class="card-body">
-                        <table class="table">
+                        {{-- <table class="table">
                             <thead>
                                 <tr>
                                     <td>Tingkat</td>
@@ -39,7 +39,7 @@
                                     </tr>
                                 @endforeach
                             </tbody>
-                        </table>
+                        </table> --}}
                     </div>
                 </div>
             </div>
@@ -49,7 +49,7 @@
                         <label for="">Guru</label>
                     </div>
                     <div class="card-body">
-                        <table class="table">
+                        {{-- <table class="table">
                             <thead>
                                 <tr>
                                     <td>Nama</td>
@@ -62,7 +62,7 @@
                                     </tr>
                                 @endforeach
                             </tbody>
-                        </table>
+                        </table> --}}
                     </div>
                 </div>
             </div>
@@ -72,7 +72,7 @@
                         <label for="">Mapel</label>
                     </div>
                     <div class="card-body">
-                        <table class="table">
+                        {{-- <table class="table">
                             <thead>
                                 <tr>
                                     <td>Nama</td>
@@ -85,21 +85,193 @@
                                     </tr>
                                 @endforeach
                             </tbody>
-                        </table>
+                        </table> --}}
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-header">
+                        <label for="">Jam</label>
+                    </div>
+                    <div class="card-body">
+                        <form action="/jam" method="post">
+                            @csrf
+                            <div class="row mx-2 my-2">
+                                <div class="form-check col">
+                                    <input class="form-check-input" name="hari[]" type="checkbox" value="senin" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        Senin
+                                    </label>
+                                </div>
+                                <div class="form-check col">
+                                    <input class="form-check-input" name="hari[]" type="checkbox" value="selasa" id="flexCheckChecked">
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                        Selasa
+                                    </label>
+                                </div>
+                                <div class="form-check col">
+                                    <input class="form-check-input" name="hari[]" type="checkbox" value="rabu" id="flexCheckChecked">
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                        Rabu
+                                    </label>
+                                </div>
+                                <div class="form-check col">
+                                    <input class="form-check-input" name="hari[]" type="checkbox" value="kamis" id="flexCheckChecked">
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                        Kamis
+                                    </label>
+                                </div>
+                                <div class="form-check col">
+                                    <input class="form-check-input" name="hari[]" type="checkbox" value="jumat" id="flexCheckChecked">
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                        Jumat
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="row mb-2 mx-2 my-2">
+                                    <div class="col">
+                                        <label for="">Jumlah Jam</label>
+                                        <input type="number" name="jumlah_sesi" class="form-control mt-2">
+                                    </div>
+                                    <div class="col">
+                                        <label for="">Waktu persatu Jam pelajaran</label>
+                                        <div class="row mx-2">
+                                            <input type="number" name="waktu_sesi" class="form-control col mt-2" id="">
+                                            <label for="" class="col mt-2">Menit</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card mt-2">
+                                <div class="mx-2 my-2">
+                                    <label for="">Jam Mulai</label>
+                                    <input type="time" name="waktu_mulai" class="form-control mt-2">
+                                </div>
+                            </div>
+                            <button class="btn btn-primary btn-md mx-2 my-2" type="submit">Submit</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="card mt-2">
+                    <div class="card-header">
+                        <label for="">Jadwal Khusus</label>
+                    </div>
+                    <div class="card-body">
+                        <form action="">
+                            <div class="row mx-2 my-2">
+                                <div class="form-check col">
+                                    <input class="form-check-input" name="hari[]" type="checkbox" value="senin" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        Senin
+                                    </label>
+                                </div>
+                                <div class="form-check col">
+                                    <input class="form-check-input" name="hari[]" type="checkbox" value="selasa" id="flexCheckChecked">
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                        Selasa
+                                    </label>
+                                </div>
+                                <div class="form-check col">
+                                    <input class="form-check-input" name="hari[]" type="checkbox" value="rabu" id="flexCheckChecked">
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                        Rabu
+                                    </label>
+                                </div>
+                                <div class="form-check col">
+                                    <input class="form-check-input" name="hari[]" type="checkbox" value="kamis" id="flexCheckChecked">
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                        Kamis
+                                    </label>
+                                </div>
+                                <div class="form-check col">
+                                    <input class="form-check-input" name="hari[]" type="checkbox" value="jumat" id="flexCheckChecked">
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                        Jumat
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="row mb-2 mx-2 my-2">
+                                    <div class="col">
+                                        <label for="">Jumlah Jam</label>
+                                        <input type="text" name="jumlah_sesi" class="form-control mt-2">
+                                    </div>
+                                    <div class="col">
+                                        <label for="">Waktu persatu Jam pelajaran</label>
+                                        <div class="row mx-2">
+                                            <input type="number" name="waktu_sesi" class="form-control col mt-2" name="" id="">
+                                            <label for="" class="col mt-2">Menit</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card mt-2">
+                                <div class="mx-2 my-2">
+                                    <label for="">Jam Mulai</label>
+                                    <input type="time" name="waktu_mulai" class="form-control mt-2">
+                                </div>
+                            </div>
+                            <button class="btn btn-primary btn-md mx-2 my-2" type="submit">Submit</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
+        <hr>
         <div class="row">
             <div class="col">
                 <div class="card">
                     <div class="card-header">
-                        <label for="">Penugasan</label>
+                        <label for="">Penugasan Guru</label>
                     </div>
                     <div class="card-body">
+
                         {{-- @include('percobaan.penugasan') --}}
                         @include('penugasan')
                     </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <label for="">Senin</label>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Sesi</th>
+                                <th>Waktu Mulai</th>
+                                <th>Waktu Selesai</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $jumlahSesi = 12;
+                            $waktuMulai = '07:00';
+                            $waktuPerSesi = 40;
+                            $menitPerSesi = 0;
+                    
+                            for ($sesi = 1; $sesi <= $jumlahSesi; $sesi++) {
+                                $waktuSelesai = date('H:i', strtotime($waktuMulai . " +{$waktuPerSesi} minutes"));
+                                echo "<tr>";
+                                echo "<td>Sesi $sesi</td>";
+                                echo "<td>$waktuMulai</td>";
+                                echo "<td>$waktuSelesai</td>";
+                                echo "</tr>";
+                    
+                                $waktuMulai = $waktuSelesai;
+                                $menitPerSesi += $waktuPerSesi;
+                                $jam = floor($menitPerSesi / 60);
+                                $menit = $menitPerSesi % 60;
+                                $waktuMulai = date('H:i', strtotime($waktuMulai . " +{$jam} hours +{$menit} minutes"));
+                            }
+                            ?>
+                        </tbody>
+                    </table>
+                    
                 </div>
             </div>
         </div>
