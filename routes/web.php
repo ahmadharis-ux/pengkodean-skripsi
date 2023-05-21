@@ -5,6 +5,7 @@ use App\Http\Controllers\PenugasanController;
 use App\Models\Guru;
 use App\Models\Kelas;
 use App\Models\Mapel;
+use App\Models\PenugasanGuru;
 use App\Models\Tingkat;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\Mailer\Transport\Dsn;
@@ -59,6 +60,7 @@ Route::get('/kromosom', function () {
     ]);
 });
 Route::resource('/jam', JamController::class);
+// Route::resource('/tugas', PenugasanGuru::class);
 // Route::post('/jam/store',[JamController::class,'store']);
 
 

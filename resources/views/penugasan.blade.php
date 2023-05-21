@@ -47,8 +47,6 @@
 
     <hr>
 
-    {{ $tingkat }}
-
 
     {{-- inputan kelas --}}
     <div class="mb-3">
@@ -77,7 +75,7 @@
                                 <label class="col-sm-3 col-form-label">Jumlah jam</label>
                                 <div class="col-sm-4">
                                     <input type="number" class="form-control"
-                                        name="jumlah_jam_kelas_{{ $t->tingkat }}" disabled>
+                                        name="jumlah_jam_kelas[]" disabled>
                                 </div>
                             </div>
 
@@ -93,7 +91,7 @@
 
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox"
-                                            name="list_kelas_{{ $t->tingkat }}_terpilih[]"
+                                            name="list_kelas[]"
                                             value="{{ $kelas->id }}" id="{{ $idKelas }}" disabled>
                                         <label class="form-check-label" for="{{ $idKelas }}">
                                             {{ $namaKelas }}

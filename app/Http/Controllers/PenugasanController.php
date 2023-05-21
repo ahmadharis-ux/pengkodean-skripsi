@@ -35,20 +35,23 @@ class PenugasanController extends Controller
      */
     public function store(Request $request)
     {
-        return $request;
+        $pilihkelas = $request->input('list_kelas', []); // Mengambil data checkbox dari form
+        $id_guru = $request->input('id_guru');
+        $mapel = $request->input('id_mapel');
+        $jamPelajaran = $request->input('jumlah_jam_kelas');
 
-        $idGuru = $request->id_guru;
-        $idMapel = $request->id_mapel;
-        $jamPelajaran = $request->$listIdKelas = $request->list_kelas_terpilih;
-
-        foreach ($listIdKelas as $idKelas) {
-            $penugasan = [
-                "id_guru" => $idGuru,
-                "id_mapel" => $idMapel,
-                // "jam_pelajaran" =>
-            ];
-            PenugasanGuru::insert();
+        foreach ($pilihkelas as $kelas) {
+            $data = new PenugasanGuru(); // Ganti YourModel dengan model yang sesuai
+            $data->id_kelas = $kelas;
+            $data->id_guru = $id_guru;
+            $data->id_mapel = $mapel;
+            $data->jam_pelajaran = $jamPelajaran;
+            // dd($data);
+            // $data->save();
+            
         }
+        // return redirect()->back();
+        return $request;
     }
 
     /**
