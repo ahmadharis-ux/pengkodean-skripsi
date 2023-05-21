@@ -56,66 +56,55 @@
         <div class="row">
 
             @foreach ($tingkat as $t)
-            <div class="col">
-                <div class="border p-3 mb-3">
-                    {{-- toggle kelas X --}}
-                    <div>
-                        <input type="checkbox" class="btn-check toggle-kelas" id="cbKelas{{ $t->tingkat }}"
-                            data-kelas="{{ $t->tingkat }}">
-                        <label class="btn btn-outline-primary " for="cbKelas{{ $t->tingkat }}">Kelas
-                            {{ $t->tingkat }}</label>
-                    </div>
-    
-                    {{-- inputan kelas --}}
-                    <div id="inputKelas-{{ $t->tingkat }}">
-    
-                        {{-- jumlah jam --}}
-                        <div class="row mb-3">
-                            <label class="col-sm-3 col-form-label">Jumlah jam</label>
-                            <div class="col-sm-4">
-                                <input type="number" class="form-control" name="jumlah_jam_kelas_{{ $t->tingkat }}"
-                                    disabled>
-                            </div>
+                <div class="col">
+                    <div class="border p-3 mb-3">
+                        {{-- toggle kelas X --}}
+                        <div>
+                            <input type="checkbox" class="btn-check toggle-kelas" id="cbKelas{{ $t->tingkat }}"
+                                data-kelas="{{ $t->tingkat }}">
+                            <label class="btn btn-outline-primary " for="cbKelas{{ $t->tingkat }}">Kelas
+                                {{ $t->tingkat }}</label>
                         </div>
-    
-                        {{-- pilihan kelas --}}
-                        <div class="d-flex flex-column border p-3  rounded">
-    
-    
-                            @foreach ($t->kelas as $kelas)
-                                @php
-                                    $namaKelas = $t->tingkat . ' ' . $kelas->nama . ' ' . $kelas->nomor;
-                                    $idKelas = str_replace($namaKelas, ' ', '');
-                                @endphp
-    
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox"
-                                        name="list_kelas_{{ $t->tingkat }}_terpilih[]" value="{{ $kelas->id }}"
-                                        id="{{ $idKelas }}" disabled>
-                                    <label class="form-check-label" for="{{ $idKelas }}">
-                                        {{ $namaKelas }}
-                                    </label>
+
+                        {{-- inputan kelas --}}
+                        <div id="inputKelas-{{ $t->tingkat }}">
+
+                            {{-- jumlah jam --}}
+                            <div class="row mb-3">
+                                <label class="col-sm-3 col-form-label">Jumlah jam</label>
+                                <div class="col-sm-4">
+                                    <input type="number" class="form-control"
+                                        name="jumlah_jam_kelas_{{ $t->tingkat }}" disabled>
                                 </div>
-                            @endforeach
-    
+                            </div>
+
+                            {{-- pilihan kelas --}}
+                            <div class="d-flex flex-column border p-3  rounded">
+
+
+                                @foreach ($t->kelas as $kelas)
+                                    @php
+                                        $namaKelas = $t->tingkat . ' ' . $kelas->nama . ' ' . $kelas->nomor;
+                                        $idKelas = str_replace($namaKelas, ' ', '');
+                                    @endphp
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox"
+                                            name="list_kelas_{{ $t->tingkat }}_terpilih[]"
+                                            value="{{ $kelas->id }}" id="{{ $idKelas }}" disabled>
+                                        <label class="form-check-label" for="{{ $idKelas }}">
+                                            {{ $namaKelas }}
+                                        </label>
+                                    </div>
+                                @endforeach
+
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
             @endforeach
         </div>
-
-
-
-
-
     </div>
-
-
-
-
-
-
     <button type="submit" class="btn btn-primary mt-5">Submit</button>
 </form>
 
@@ -141,8 +130,6 @@
                     $(inputs[i]).attr('disabled', 'disabled')
                 }
             }
-
-
         }
 
         cbKelasX.change(handleToggleKelas)
