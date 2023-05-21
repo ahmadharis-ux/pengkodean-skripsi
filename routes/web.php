@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\JamController;
+use App\Http\Controllers\PenugasanController;
 use App\Models\Guru;
 use App\Models\Kelas;
 use App\Models\Mapel;
@@ -31,7 +32,7 @@ Route::get('/', function () {
         "mapel" => Mapel::all(),
     ]);
 });
-Route::get('/kromosom', function(){
+Route::get('/kromosom', function () {
     // $dataA = ['A1', 'A2', 'A3','A4','A6','A7','A8'];
     $dataA = [];
     for ($i = 1; $i <= 100; $i++) {
@@ -45,7 +46,7 @@ Route::get('/kromosom', function(){
     $mergedData = [];
 
     $maxLength = max(count($dataA), count($dataB));
-    
+
     for ($i = 0; $i < $maxLength; $i++) {
         $mergedData[] = [
             'A' => isset($dataA[array_rand($dataA)]) ? $dataA[array_rand($dataA)] : '',
@@ -53,7 +54,7 @@ Route::get('/kromosom', function(){
         ];
     }
     // dd($mergedData);
-    return view('kromosom',[
+    return view('kromosom', [
         'mergedata' => $mergedData,
     ]);
 });
@@ -66,7 +67,4 @@ Route::get('/penugasan_layout', function () {
     return view('percobaan.penugasan');
 });
 
-Route::post('/test_submit', function (HttpRequest $request) {
-    // dd($request);
-    return $request;
-});
+Route::post('/test_submit', [PenugasanController::class, 'store']);

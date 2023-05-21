@@ -47,6 +47,9 @@
 
     <hr>
 
+    {{ $tingkat }}
+
+
     {{-- inputan kelas --}}
     <div class="mb-3">
         <p class="fs-3 mt-5">Kelas</p>
@@ -115,8 +118,10 @@
         const cbKelasXI = $("#cbKelasXI")
         const cbKelasXII = $("#cbKelasXII")
 
+
         function handleToggleKelas(evt) {
             const isChecked = this.checked
+
             const kelasTerpilih = $(this).data('kelas')
             const container = `#inputKelas-${kelasTerpilih}`
             const inputs = $(container).find('input')

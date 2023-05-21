@@ -35,7 +35,20 @@ class PenugasanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return $request;
+
+        $idGuru = $request->id_guru;
+        $idMapel = $request->id_mapel;
+        $jamPelajaran = $request->$listIdKelas = $request->list_kelas_terpilih;
+
+        foreach ($listIdKelas as $idKelas) {
+            $penugasan = [
+                "id_guru" => $idGuru,
+                "id_mapel" => $idMapel,
+                // "jam_pelajaran" =>
+            ];
+            PenugasanGuru::insert();
+        }
     }
 
     /**
