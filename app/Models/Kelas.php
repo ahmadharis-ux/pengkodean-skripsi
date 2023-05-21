@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Kelas extends Model
 {
     use HasFactory;
-    function tingkat(){
+    function tingkat()
+    {
         return $this->belongsTo(Tingkat::class);
     }
 }

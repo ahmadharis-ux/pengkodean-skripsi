@@ -4,8 +4,13 @@ use App\Http\Controllers\JamController;
 use App\Models\Guru;
 use App\Models\Kelas;
 use App\Models\Mapel;
+use App\Models\Tingkat;
 use Illuminate\Support\Facades\Route;
+<<<<<<< HEAD
 use Symfony\Component\Mailer\Transport\Dsn;
+=======
+use Illuminate\Http\Request as HttpRequest;
+>>>>>>> main
 
 /*
 |--------------------------------------------------------------------------
@@ -19,12 +24,17 @@ use Symfony\Component\Mailer\Transport\Dsn;
 */
 
 Route::get('/', function () {
-    return view('index',[
+    return view('index', [
         "kelas" => Kelas::all(),
+        "tingkat" => Tingkat::all(),
+        "listKelasX" => Kelas::where('tingkat_id', '1'),
+        "listKelasXI" => Kelas::where('tingkat_id', '2'),
+        "listKelasXII" => Kelas::where('tingkat_id', '3'),
         "guru" => Guru::all(),
         "mapel" => Mapel::all(),
     ]);
 });
+<<<<<<< HEAD
 Route::get('/kromosom', function(){
     // $dataA = ['A1', 'A2', 'A3','A4','A6','A7','A8'];
     $dataA = [];
@@ -53,3 +63,15 @@ Route::get('/kromosom', function(){
 });
 Route::resource('/jam', JamController::class);
 // Route::post('/jam/store',[JamController::class,'store']);
+=======
+
+
+Route::get('/penugasan_layout', function () {
+    return view('percobaan.penugasan');
+});
+
+Route::post('/test_submit', function (HttpRequest $request) {
+    // dd($request);
+    return $request;
+});
+>>>>>>> main

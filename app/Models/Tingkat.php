@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Tingkat extends Model
 {
     use HasFactory;
+
+    function kelas()
+    {
+        return $this->hasMany(Kelas::class);
+    }
 }
